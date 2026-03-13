@@ -1,0 +1,164 @@
+<div class="mx-auto max-w-7xl px-3 py-3.5">
+  <div class="min-w-0">
+    <div class="space-y-5 sm:space-y-6">
+      <section
+        class="max-w-4xl mx-auto overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm"
+      >
+        <div class="group/cover relative h-48 sm:h-64 bg-slate-200 overflow-hidden">
+          <img
+            [alt]="user.name"
+            [src]="user.cover"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover/cover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black/10 group-hover/cover:bg-black/20 transition-colors"
+          ></div>
+
+          <div
+            class="absolute right-4 top-4 flex gap-2 opacity-0 group-hover/cover:opacity-100 transition-opacity duration-300"
+          >
+            <button
+              class="flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold hover:bg-white/30 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              Edit Cover
+            </button>
+          </div>
+        </div>
+
+        <div class="relative px-6 pb-8">
+          <div class="relative flex justify-between items-end -mt-12 sm:-mt-16 mb-6">
+            <div class="group/avatar relative">
+              <div
+                class="h-24 w-24 sm:h-36 sm:w-36 rounded-full border-4 border-white bg-slate-100 overflow-hidden shadow-sm"
+              >
+                <img [alt]="user.name" [src]="userImg" class="h-full w-full object-cover" />
+              </div>
+              <label
+                class="absolute bottom-1 right-1 h-8 w-8 bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer border-2 border-white hover:bg-blue-600 transition shadow-sm opacity-0 group-hover/avatar:opacity-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                <input type="file" class="hidden" />
+              </label>
+            </div>
+
+            <div class="flex gap-2 pb-2">
+              <button
+                class="px-5 py-2 rounded-full border border-slate-200 font-bold text-sm hover:bg-slate-50 transition"
+              >
+                Edit Profile
+              </button>
+              <button
+                class="px-5 py-2 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition shadow-sm"
+              >
+                Post
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-1 mb-6">
+            <div class="flex items-center gap-2">
+              <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                {{ user.name }}
+              </h1>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="#0ea5e9"
+                class="mt-1"
+              >
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p class="text-slate-500 font-medium">@{{ user.username }}</p>
+          </div>
+
+          <div class="text-[15px] text-slate-600 leading-relaxed max-w-2xl mb-6">
+            <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-sm text-slate-500">
+              <div class="flex items-center gap-1.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                </svg>
+                {{ user.email }}
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                  />
+                </svg>
+                Joined {{ user.createdAt | date: 'MMMM yyyy' }}
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-6 border-t border-slate-50 pt-6">
+            <div class="flex gap-1 items-baseline">
+              <span class="font-black text-slate-900">{{ user.followingCount }}</span>
+              <span class="text-slate-500 text-sm">Following</span>
+            </div>
+            <div class="flex gap-1 items-baseline">
+              <span class="font-black text-slate-900">{{ user.followersCount }}</span>
+              <span class="text-slate-500 text-sm">Followers</span>
+            </div>
+            <div class="flex gap-1 items-baseline">
+              <span class="font-black text-slate-900">{{ postList.length }}</span>
+              <span class="text-slate-500 text-sm">Posts</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="max-w-4xl mx-auto overflow-hidden">
+        @for (post of postList; track post._id) {
+          <app-post (deleteItemId)="deletePostItem($event)" [post]="post"></app-post>
+        }
+      </div>
+    </div>
+  </div>
+</div>

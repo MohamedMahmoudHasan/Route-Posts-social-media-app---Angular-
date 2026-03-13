@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+@import 'flowbite/src/themes/default';
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@import 'ngx-toastr/toastr';
+
+@theme {
+  --color-mainColor: #00298d;
+  --color-secondColor: #f0f2f5;
+}
+
+@layer components {
+  .btn {
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 2);
+    border-radius: var(--radius-xl);
+    border-style: var(--tw-border-style);
+    border-width: 0.0625rem;
+    border-color: color-mix(in oklab, var(--color-gray-400) 30%, transparent);
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: var(--color-secondColor);
+  font-family: 'SN Pro', sans-serif;
+}
+
+.active {
+  @apply bg-white text-[#1f6fe5];
+}
