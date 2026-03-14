@@ -1,59 +1,30 @@
-# Social
+# Route Posts - Social Media Application 📱
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.13.
+A modern, responsive social media platform built using **Angular**, featuring user interactions, activity feeds, and profile management. This project was developed as part of my training at **Route**.
 
-## Development server
+## 🚀 Demo
+[https://route-posts.netlify.app/]
 
-To start a local development server, run:
+## ✨ Features
+* **User Authentication:** Secure login and registration.
+* **Activity Feed:** Browse through the latest posts and updates.
+* **Interactive Posts:** Support for creating, editing, and deleting posts.
+* **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens using **Tailwind CSS**.
+* **Profile Management:** Personalized user profiles and activity history.
 
-```bash
-ng serve
-```
+## 🛠️ Built With
+* [Angular](https://angular.io/) - The web framework used.
+* [Tailwind CSS](https://tailwindcss.com/) - For styling and layout.
+* [TypeScript](https://www.typescript.org/) - Programming language.
+* [RxJS](https://rxjs.dev/) - For reactive programming.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ⚙️ Installation & Setup
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/MohamedMahmoudHasan/Route-Posts-social-media-app---Angular-.git](https://github.com/MohamedMahmoudHasan/Route-Posts-social-media-app---Angular-.git)
 
-## Code scaffolding
+   cd Route-Posts-social-media-app---Angular-
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+   npm install
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ng serve
